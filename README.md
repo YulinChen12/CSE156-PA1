@@ -1,5 +1,5 @@
 # CSE156-PA1 Code 
-### Usage
+## Usage
 To run the code, execute the `main.py` script with the specified model type:
 
 ```bash
@@ -19,7 +19,7 @@ To run the DAN model:
 ```bash
 python main.py --model DAN
 ```
-### Dataset Setup
+## Dataset Setup
 
 Ensure your dataset files are placed in the data directory with the following structure:
 
@@ -27,7 +27,7 @@ Ensure your dataset files are placed in the data directory with the following st
 
 ```data/dev.txt```
 
-GloVe Embeddings Setup
+### GloVe Embeddings Setup
 
 The code uses pre-trained GloVe embeddings. Make sure the following files are placed in the data directory:
 
