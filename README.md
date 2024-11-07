@@ -1,6 +1,6 @@
 # CSE156-PA2 Code 
 ## Usage
-To run the code, execute the `main.py` script with the specified model type:
+To run the code, execute the `main.py` script with the specified part:
 
 ```bash
 python main.py [part]
