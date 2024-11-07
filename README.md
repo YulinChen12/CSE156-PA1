@@ -6,11 +6,13 @@ To run the code, execute the `main.py` script with the specified part:
 python main.py [part]
 ```
 Replace ***[part]*** with:
+
 part1
 
 or 
 
 part2
+
 Example Command
 
 To run the Encoder:
