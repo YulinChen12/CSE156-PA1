@@ -1,38 +1,31 @@
-# CSE156-PA1 Code 
+# CSE156-PA2 Code 
 ## Usage
 To run the code, execute the `main.py` script with the specified model type:
 
 ```bash
-python main.py --model [MODEL_NAME]
+python main.py [part]
 ```
-Replace ***[MODEL_NAME]*** with:
+Replace ***[part]*** with:
+part1
 
+or 
 
-**BOW** for the Bag-of-Words model
-
-**DAN** for the Deep Averaging Network model
-
-
+part2
 Example Command
 
-To run the DAN model:
+To run the Encoder:
 ```bash
-python main.py --model DAN
+python main.py part1
 ```
 ## Dataset Setup
 
 Ensure your dataset files are placed in the data directory with the following structure:
 
-```data/train.txt```
+data/
+├── train_CLS.tsv            # Training data for classification
+├── test_CLS.txt             # Test data for classification
+├── train_LM.txt             # Training data for language modeling
+├── test_LM_obama.txt        # Test data for Obama language modeling
+├── test_LM_wbush.txt        # Test data for W. Bush language modeling
+├── test_LM_hbush.txt        # Test data for H. Bush language modeling
 
-```data/dev.txt```
-
-### GloVe Embeddings Setup
-
-The code uses pre-trained GloVe embeddings. Make sure the following files are placed in the data directory:
-
-```glove.6B.50d-relativized.txt```
-
-```glove.6B.300d-relativized.txt```
-
-The DAN model will use one of these files for initializing the embedding layer.
