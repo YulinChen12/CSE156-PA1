@@ -21,3 +21,61 @@ tangrams_project/
 ├── documentation/
 │   ├── README.md                                     # This file
 
+## Steps to Process the Data
+
+### Step 1: Dataset Cleaning
+- **Input**: `rounds(in)_sorted by D and H (rounds(in)).csv`.
+- **Objective**: Structure and clean the raw data by parsing nested fields, splitting rows by roles, and renaming ambiguous columns.
+- **Output**: Saved as `tangram.csv`.
+
+---
+
+### Step 2: Language Tagging
+- **Input**: `tangram.csv`.
+- **Objective**: Apply language tagging rules to annotate utterances with appropriate language tags based on the following predefined categories:
+
+| **Tag**    | **Description**                                                                                  |
+|------------|--------------------------------------------------------------------------------------------------|
+| `E`        | Entirely English.                                                                               |
+| `S`        | Entirely Spanish.                                                                               |
+| `SE`       | Mixed starting with Spanish.                                                                    |
+| `ES`       | Mixed starting with English.                                                                    |
+| `P`        | Proper noun (e.g., names of places, people, institutions).                                       |
+| `EP/SP`    | Proper noun at the end of an IU in English or Spanish.                                           |
+| `D`        | Discourse marker or backchannel (e.g., "so," "you know"), ambiguous when near Spanish.           |
+| `F`        | Filler sounds (e.g., "uh," "eh"), language-neutral.                                             |
+| `N`        | Neutral "no" at language switch points.                                                         |
+| `A`        | Non-linguistic sounds (e.g., laughter, coughing).                                               |
+| `X`        | Unclear or unintelligible speech.                                                               |
+| `L`        | Lone item, single word from one language in another, often nouns.                               |
+| `SLS/ELE`  | Lone item followed by the same language.                                                        |
+
+- **Output**: Saved as `tangrams_v0.csv`.
+
+---
+
+### Step 3: Merging with Metadata
+- **Inputs**:
+  - `tangrams_v0.csv`: Annotated dataset with utterance-level information.
+  - `tidy_data.csv`: Dataset containing additional metadata (e.g., game, player, and round identifiers).
+- **Objective**: Merge the two datasets based on shared keys:
+  - `Game ID` in `tangrams_v0.csv` ↔ `game_id` in `tidy_data.csv`.
+  - `Stage ID` in `tangrams_v0.csv` ↔ `stage_id` in `tidy_data.csv`.
+- **Output**: Saved as `merged_tidy.csv`.
+
+---
+
+### Step 4: Adding Role-Based Utterance Counts
+- **Input**: `merged_tidy.csv`.
+- **Objective**: Add two new columns:
+  - `Director Count`: Number of utterances by the `director` for each game.
+  - `Matcher Count`: Number of utterances by the `matcher` for each game.
+- **Output**: Saved as `merged.csv`.
+
+---
+
+### Step 5: Reapplying Language Tagging
+- **Input**: `merged.csv`.
+- **Objective**: Reapply language tagging rules to ensure consistency and address debugging issues. The same tagging rules as in Step 2 were used.
+- **Output**: Saved as `merged_retag.csv`.
+
