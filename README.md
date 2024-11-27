@@ -20,6 +20,7 @@ tangrams_project/
 ├── scripts/                                          # Data processing scripts
 ├── documentation/
 │   ├── README.md                                     # This file
+```
 
 ## Steps to Process the Data
 
