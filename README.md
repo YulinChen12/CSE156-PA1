@@ -79,4 +79,30 @@ tangrams_project/
 - **Input**: `merged.csv`.
 - **Objective**: Reapply language tagging rules to ensure consistency and address debugging issues. The same tagging rules as in Step 2 were used.
 - **Output**: Saved as `merged_retag.csv`.
+- 
+The final dataset (merged_retag.csv) includes the following columns:
+
+| **Column Name**       | **Description**                                                   |
+|------------------------|-------------------------------------------------------------------|
+| `Stage ID`            | Identifier for the stage within a game.                          |
+| `Game ID`             | Identifier for the game session.                                 |
+| `Trial Number`        | The trial number within the game.                                |
+| `Repetition Number`   | The repetition number for the trial.                             |
+| `Text`                | Utterance text from the speaker.                                 |
+| `Player ID`           | Identifier for the player making the utterance.                 |
+| `Target`              | The target object in the game.                                   |
+| `Role`                | Role of the player (`director` or `matcher`).                   |
+| `Language`            | The language tag applied to the utterance.                      |
+| `Response`            | The response data for the utterance.                            |
+| `Round Number`        | The round number within the session.                             |
+| `game_id`             | Metadata column linking to `tidy_data.csv`.                     |
+| `dyad_id`             | Metadata column for the dyad (pair of players).                 |
+| `player_1_id`         | Identifier for Player 1.                                         |
+| `player_2_id`         | Identifier for Player 2.                                         |
+| `round_id`            | Identifier for the round.                                        |
+| `stage_id`            | Metadata column linking to `tidy_data.csv`.                     |
+| `game_start`          | Timestamp for the start of the game.                             |
+| `Director Count`      | Number of utterances by the `director` in each round.            |
+| `Matcher Count`       | Number of utterances by the `matcher` in each round.             |
+
 
