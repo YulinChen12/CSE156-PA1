@@ -79,7 +79,7 @@ tangrams_project/
 - **Input**: `merged.csv`.
 - **Objective**: Reapply language tagging rules to ensure consistency and address debugging issues. The same tagging rules as in Step 2 were used.
 - **Output**: Saved as `merged_retag.csv`.
-- 
+
 The final dataset (merged_retag.csv) includes the following columns:
 
 | **Column Name**       | **Description**                                                   |
