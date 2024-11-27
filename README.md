@@ -1,39 +1,23 @@
-# CSE156-PA2 Code 
-## Usage
-To run the code, execute the `main.py` script with the specified part:
+# Tangrams Project: Data Processing Documentation
 
-```bash
-python main.py [part]
-```
-Replace ***[part]*** with:
+## Overview
 
-part1
+This README outlines the steps taken to process the datasets used in the Tangrams project, culminating in the final file `merged_retag.csv`. The workflow includes cleaning raw data, annotating with language tags, merging datasets, adding role-based utterance counts, and reapplying language tagging due to debugging issues.
 
-or 
+## Project Folder Structure
 
-part2
+```plaintext
+tangrams_project/
+├── raw_data/
+│   ├── rounds(in)_sorted by D and H (rounds(in)).csv  # Original messy dataset
+│   ├── tidy_data.csv                                 # Dataset with additional metadata
+├── processed_data/
+│   ├── tangram.csv                                   # Cleaned intermediate dataset
+│   ├── tangrams_v0.csv                               # Annotated dataset with language tags
+│   ├── merged_tidy.csv                               # Merged dataset with tidy_data.csv
+│   ├── merged.csv                                    # Dataset with utterance counts
+│   ├── merged_retag.csv                              # Final dataset with re-applied language tagging
+├── scripts/                                          # Data processing scripts
+├── documentation/
+│   ├── README.md                                     # This file
 
-Example Command
-
-To run the Encoder:
-```bash
-python main.py part1
-```
-## Dataset Setup
-
-Ensure your dataset files are placed in the data directory with the following structure:
-```bash
-data/
-
-├── train_CLS.tsv            # Training data for classification
-
-├── test_CLS.txt             # Test data for classification
-
-├── train_LM.txt             # Training data for language modeling
-
-├── test_LM_obama.txt        # Test data for Obama language modeling
-
-├── test_LM_wbush.txt        # Test data for W. Bush language modeling
-
-├── test_LM_hbush.txt        # Test data for H. Bush language modeling
-```
